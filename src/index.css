@@ -1,0 +1,365 @@
+html {
+  height: 100%;
+  width: 100%
+}
+
+html[data-theme="cobalt"] {
+  --primary: #5f7c8a;
+  --secondary: #455a64;
+  --tertiary: #2c404f;
+  --quaternary: #172733;
+  --foreground: #d3dee6;
+  --foreground-alt: #a7c2d6;
+}
+
+html[data-theme="opal"] {
+  --primary: #8ca7ba;
+  --secondary: #677e8a;
+  --tertiary: #546e7a;
+  --quaternary: #37474f;
+  --foreground: #d3dee6;
+  --foreground-alt: #a7c2d6;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column.tertiary {
+  background-color: var(--tertiary);
+  color: var(--foreground);
+}
+
+.column.flex {
+  flex: 1;
+}
+
+.column.vertical-scroll {
+  overflow-y: scroll;
+}
+
+.column.secondary {
+  background-color: var(--secondary);
+}
+
+.column.centered {
+  text-align: center;
+}
+
+.row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.row.tertiary {
+  background-color: var(--tertiary);
+}
+
+.row.first-column {
+  flex: none;
+  height: auto;
+  flex-direction: row;
+}
+
+@font-face {
+  font-family: comfortaa;
+  src: url(../public/assets/static/Comfortaa-Regular.ttf);
+}
+
+/* main level grid container */
+.level-grid-container {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+/* level editor pane */
+.level-editor-pane {
+  width: 65%;
+  flex: none;
+  color: var(--foreground);
+}
+
+.level-editor-header {
+  margin-top: 0.5em !important;
+  font-family: comfortaa !important;
+  color: var(--foreground) !important;
+}
+
+.level-editor-menu {
+  margin-left: 12%;
+  margin-bottom: 2%;
+  max-width: 620px;
+}
+
+.level-editor-menu-item {
+  color: var(--foreground) !important;
+}
+
+.level-editor-menu-item.selected {
+  border-color: var(--foreground) !important;
+}
+
+/* pane of vertical items for selection, e.g. level selector */
+.list-pane {
+  background-color: var(--tertiary);
+  padding: 1em;
+  padding-left: 2em;
+  cursor: pointer;
+  overflow-y: scroll;
+  height: 94%;
+  width: 100%;
+}
+
+.list-pane-item {
+  font-family: comfortaa;
+  color: var(--foreground);
+  border-radius: 4px;
+}
+
+.list-pane-item:hover {
+  background-color: var(--secondary);
+}
+
+.list-pane-item.expanded {
+  margin-bottom: 0.5em;
+}
+
+.list-pane-item.indented {
+  margin-left: 3em;
+}
+
+.list-pane-item.indented:hover {
+  background-color: var(--primary);
+}
+
+/* level edit controls */
+.edit-pane-container {
+  flex: 1;
+  background-color: var(--tertiary);
+  margin-bottom: 6em;
+}
+
+.edit-pane {
+  text-align: left;
+  color: #ffffff;
+  margin-top: 1em;
+  margin-left: 1em;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 300px;
+}
+
+/* headers with title for grid sections */
+.section-header {
+  font-family: comfortaa;
+  color: var(--foreground);
+  background-color: var(--quaternary);
+  font-variant: small-caps;
+  width: 100%;
+  padding: 1em;
+  font-weight: bold;
+}
+
+.section-header.tight {
+  flex: none;
+  height: auto;
+  padding: 0.5em;
+  margin-top: 2em;
+}
+
+.section-header .edit-section {
+  flex: none;
+  height: auto;
+  color: var(--foreground-alt);
+  padding: 0.2em;
+}
+
+/* edit pane menu */
+.edit-pane-menu {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: var(--quaternary);
+  font-variant: small-caps;
+  color: var(--foreground);
+  font-size: 1em;
+  text-align: left;
+}
+
+.edit-menu-item {
+  background-color: var(--quaternary);
+  text-align: center;
+  flex: none;
+  width: auto;
+  padding: 0.8em;
+  cursor: pointer;
+}
+
+.edit-menu-item:hover {
+  background-color: var(--secondary);
+}
+
+.edit-menu-item.active-item {
+  background-color: var(--tertiary);
+}
+
+/* wall placement pane */
+.wall-item-div {
+  cursor: pointer;
+  background-color: var(--secondary);
+  text-align: center;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  font-size: 0.8em;
+  padding-top: 10px;
+}
+
+.wall-item-div.active-item {
+  border: 1px solid #f00;
+}
+
+/* informational messages, primary solid-fill buttons */
+.info-message {
+  background-color: var(--secondary) !important;
+  color: var(--foreground) !important;
+  font-weight: bold;
+}
+
+/* buttons intended to be placed next to each other, inline */
+.spaced-button {
+  margin-right: "0.5em";
+  background-color: var(--secondary) !important;
+  color: var(--foreground-alt) !important;
+}
+
+/* canvas with level grid */
+.level-grid {
+  border: 5px;
+  border-color: #ddd;
+  border-style: solid;
+  border-radius: 7px;
+}
+
+/* right-hand editor settings panel */
+.settings-panel {
+  text-align: left;
+  margin-top: 1em;
+  margin-left: 1.5em;
+}
+
+/* background and wall selection */
+.settings-canvas-selector {
+  padding: 3%;
+  width: 95%;
+}
+
+/* level settings visibility toggle */
+.settings-visibility-container {
+  margin: 1em;
+  margin-left: 1.2em;
+}
+
+.settings-visibility-row {
+  height: 2em;
+  color: var(--foreground-alt);
+  display: flex;
+}
+
+.settings-visibility-label {
+  margin-right: 2em;
+  width: 7em;
+}
+
+.settings-visibility-menu {
+  background-color: var(--secondary) !important;
+  margin-top: -0.2em !important;
+  height: 0.5em !important;
+  min-height: 1.8em !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+}
+
+.settings-visibility-menu-item {
+  background-color: var(--secondary) !important;
+  padding-top: 0.1em !important;
+  padding-bottom: 0.1em !important;
+  color: var(--foreground) !important;
+}
+
+.settings-visibility-menu-item.selected {
+  color: var(--foreground) !important;
+  background-color: var(--primary) !important;
+}
+
+/* bottom right link container */
+.bottom-links {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  border-radius: 6px;
+  padding: 0.3em;
+  text-align: center;
+  color: var(--foreground);
+  border: 2px solid var(--quaternary);
+  background-color: var(--secondary);
+  box-shadow: 3px 3px #222222;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.8em;
+}
+
+.bottom-links-item {
+  flex: 1;
+  padding: 0.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  padding-top: 0.3em;
+  padding-left: 0.3em;
+}
+
+.bottom-links-item:hover {
+  background-color: var(--primary);
+}
+
+/* modal */
+.display-modal {
+  background-color: var(--secondary) !important;
+  color: var(--foreground) !important;
+}
+
+.display-modal.tertiary {
+  background-color: var(--tertiary) !important;
+  font-variant: small-caps;
+}

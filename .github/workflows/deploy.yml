@@ -1,0 +1,27 @@
+name: Node.js CI - GitHub Pages Deployment
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: build
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - run: yarn && yarn build
+
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./build  
