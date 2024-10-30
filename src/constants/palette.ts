@@ -24,10 +24,10 @@ export type WallSet = {
  * with upper palette URLs, there is a fourth entry for each item which is unused.
  */
 export const PALETTE_URLS = [
-    ["assets/images/core-set-cropped.png", "assets/bin/core-sets.bin"],
+    [`${process.env.PUBLIC_URL}/assets/images/core-set-cropped.png`, `${process.env.PUBLIC_URL}/assets/bin/core-sets.bin`],
     ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => ([
-        `assets/images/walls-${i}.png.cropped.png`,
-        `assets/bin/walls-${i}.bin`,
+        `${process.env.PUBLIC_URL}/assets/images/walls-${i}.png.cropped.png`,
+        `${process.env.PUBLIC_URL}/assets/bin/walls-${i}.bin`,
         { indexes: WALL_INDEXES[i - 1], orientations: WALL_ORIENTATIONS[i - 1], palette: i } as WallSet,
         i
     ])),
@@ -39,8 +39,8 @@ export const PALETTE_URLS = [
  */
 export const UPPER_PALETTE_URLS = (() => (
     Object.keys(UPPER_PALETTE_COORDINATES).map(url => ([
-        `assets/images/upper/${url}.png`,
-        `assets/bin/upper/upper-${url}.bin`,
+        `${process.env.PUBLIC_URL}/assets/images/upper/${url}.png`,
+        `${process.env.PUBLIC_URL}/assets/bin/upper/upper-${url}.bin`,
         UPPER_PALETTE_COORDINATES[url],
         url.includes("global") ? -1 : +url.split("-")[0]
     ]))
