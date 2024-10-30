@@ -17,7 +17,7 @@ export class Backgrounds {
     }
 
     async appendBackground(index: number) {
-        const [canvas, width, height] = await loadImage(`assets/images/backgrounds/${index}.png`);
+        const [canvas, width, height] = await loadImage(`${process.env.PUBLIC_URL}/assets/images/backgrounds/${index}.png`);
         this.canvases[index] = canvas;
         this.width = width;
         this.height = height;

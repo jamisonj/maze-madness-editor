@@ -18,7 +18,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://hatteringill.github.io/maze-madness-editor",
+  "homepage": "/maze-madness-editor",
   "scripts": {
     "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
@@ -48,5 +48,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
