@@ -14,8 +14,8 @@ import LockUnlockGroups from "./LockUnlockGroups";
 import { useCurrentRoom } from "../../../Editor/hooks";
 import { LevelActions } from "../../../../reducers/level";
 
-const KEY_ORDER = ["", "L", "R", "U", "D", "LR", "DU", "LU", "RU", "DR", "DL", "LRU", "DRU", "DLR", "DLU", "DLRU" ];
-const LABEL_ORDER = ["None", "Left", "Right", "Up", "Down", "Left/Right", "Up/Down", "Up/Left", "Up/Right", "Down/Right", "Down/Left", "Left/Right/Up", "Down/Right/Up", "Left/Right/Down", "Left/Down/Up", "All"];
+const KEY_ORDER = ["", "L", "R", "U", "D", "LR", "DU", "LU", "RU", "DR", "DL", "LRU", "DRU", "DLR", "DLU", "DLRU", "I" ];
+const LABEL_ORDER = ["None", "Left", "Right", "Up", "Down", "Left/Right", "Up/Down", "Up/Left", "Up/Right", "Down/Right", "Down/Left", "Left/Right/Up", "Down/Right/Up", "Left/Right/Down", "Left/Down/Up", "All", "Invisible"];
 
 const AUTO_WALL_HELP = `
 Auto (unlocked) walls change their orientation when walls are placed or removed adjacent to them. Locked walls do not change unless explicitly replaced.
