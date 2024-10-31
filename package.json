@@ -18,7 +18,7 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://jamisonj.github.io/maze-madness-editor",
+  "homepage": "/maze-madness-editor",
   "scripts": {
     "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
