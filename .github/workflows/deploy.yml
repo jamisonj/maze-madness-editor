@@ -26,3 +26,4 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_branch: main
           publish_dir: ./build  
+          exclude_assets: 'README.md'
