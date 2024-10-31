@@ -3,7 +3,7 @@ name: Node.js CI - GitHub Pages Deployment
 on:
   push:
     branches:
-      - 'main' # Run when pushed to main branch
+      - 'main'
 
 jobs:
   build:
