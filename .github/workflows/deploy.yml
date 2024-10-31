@@ -2,12 +2,11 @@ name: Node.js CI - GitHub Pages Deployment
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - 'main'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -22,9 +21,6 @@ jobs:
 
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_branch: main
-          publish_dir: ./build  
-          exclude_assets: 'README.md'
+          publish_dir: ./build
